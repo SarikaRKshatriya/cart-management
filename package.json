@@ -1,0 +1,16 @@
+{
+  "name": "cart-manage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "out/index.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.5",
+    "typescript": "^4.2.2"
+  }
+}

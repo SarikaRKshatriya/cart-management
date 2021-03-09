@@ -1,0 +1,212 @@
+<html>
+<head>
+	<title></title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="index.ts"></script>
+</head>
+<body>
+<div>
+  <div
+  style="
+  text-align: center;
+   height: 100px;
+   background-image: url('background.jfif');
+
+  "
+>
+ 
+  <span style="font-size: 50px; color: beige; margin-top: 25px"
+    >Online Book Shopping Application</span>
+
+</div>
+ <div> 
+  <div style="display:flex;">
+   <button class="edit-btn" onclick="home()" style="margin-left: 80%;margin-top: 20px;">
+          <i class="fa fa-home">Home</i>
+  </button>
+  <button class="edit-btn" onclick="renderCartTable()" style="margin-top: 20px;">
+          <i class="fa fa-shopping-cart">Cart</i>
+  </button>
+ 
+ </div>
+  <div class="grid" id="list">
+    <ul>
+      <li><img src="book1.webp" width="150" height="200"></li>
+      <li>The Alchemist</li>
+      <li>by Paulo Coelho</li>
+      <li>₹.189</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('The Alchemist')" style="width: auto;">Add to Cart</button></li>
+    </ul>
+     <ul>
+      <li><img src="book2.webp" width="150" height="200"></li>
+      <li>Atomic habits</li>
+      <li>by James Clear</li>
+      <li>₹.178</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('Atomic habits')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book3.webp" width="150" height="200"></li>
+      <li>The Monk Who Sold His Ferrari</li>
+      <li>by Robin Sharma</li>
+      <li>₹.152</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('The Monk Who Sold His Ferrari')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book4.webp" width="150" height="200"></li>
+      <li>The 7 Habits of Highly Effective People</li>
+      <li>by Stephen R. Covey</li>
+      <li>₹.199</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('The 7 Habits of Highly Effective People')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book5.webp" width="150" height="200"></li>
+      <li>Ikigai: The Japanese secret to a long and happy life</li>
+      <li>by Héctor García and Francesc Miralles </li>
+      <li>₹.359</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('Ikigai: The Japanese secret to a long and happy life')" style="width: auto">Add to Cart</button></li>
+    </ul>
+  
+      <ul>
+      <li><img src="book6.webp" width="150" height="200"></li>
+      <li>The Theory of Everything: The Origin and Fate of the Universe</li>
+      <li>by Stephen Hawking </li>
+      <li>₹.158</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('The Theory of Everything: The Origin and Fate of the Universe')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book7.webp" width="150" height="200"></li>
+      <li>Three Thousand Stitches: Ordinary People, Extraordinary Lives</li>
+      <li>by Sudha Murphy</li>
+      <li>₹.79</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('Three Thousand Stitches: Ordinary People, Extraordinary Lives')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book8.webp" width="150" height="200"></li>
+      <li>How To Use The Power Of Prayer: A motivational guide to transform your life</li>
+      <li>by Dr. Joseph Murphy</li>
+      <li>₹.178</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('How To Use The Power Of Prayer: A motivational guide to transform your life')" style="width: auto">Add to Cart</button></li>
+    </ul>
+        <ul>
+      <li><img src="book9.jpg" width="150" height="200"></li>
+      <li>The Pursuit of Happiness: A Book of Studies and Strowings</li>
+      <li>by Daniel G. Brinton</li>
+      <li>₹.99</li>
+      <li><button class="edit-btn" id="showToast" onclick="edit('The Pursuit of Happiness: A Book of Studies and Strowings')" style="width: auto">Add to Cart</button></li>
+    </ul>
+      <ul>
+      <li><img src="book10.jpg" width="150" height="200"></li>
+      <li>The 5 AM Club: Own Your Morning, Elevate Your Life</li>
+      <li>by Robin Sharma </li>
+      <li>₹.210</li>
+      <li><button class="edit-btn"  id="showToast" onclick="edit('The 5 AM Club: Own Your Morning, Elevate Your Life')" style="width: auto">Add to Cart</button></li>
+    </ul>
+  </div>
+   <div id="cart" style="width: 90%;visibility:hidden;">
+  <p id="show-table"></p>
+
+<div style="float: right;
+    font-size: 20px;margin-top: 10px;
+    ">
+    <span>Total Amount:₹<span id="showtotal"></span></span><br>
+    <button data-toggle="modal" data-target="#checkoutModal">Checkout</button>
+</div>
+
+   </div>
+ </div>
+</div>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" style="position: absolute; bottom: 1rem; right: 1rem;background-color: green;">
+ 
+  <div class="toast-body" style="font-size: 20px;">
+    Selected item successfully added to cart.
+ </div>
+</div>
+  <div class="modal fade" id="checkoutModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+           <h4 class="modal-title">Your order has been received.</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+          <span>Thank you for your purchase!</span><br>
+          <span>You will receive order confirmation email.</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" onclick="home()">Contine Shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<style>
+	img{
+		padding-top: 10px;
+	}
+	li {
+  list-style: none;
+}
+	@media screen and (max-width: 600px) {
+  .grid {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+table {
+  width:100%;
+  margin:15px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr:nth-child(odd) {
+ background-color: #fff;
+}
+th {
+  background-color: #f36f25;
+  color: white;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  align-items: end;
+  color: #23bdc3;
+  text-align: center;
+  width: 90%;
+  margin-left: 50px;
+}
+.grid > ul{
+  background-color: white;
+  padding: 0px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+button {
+  background-color: white;
+  color: #f36f25;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid #f36f25;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+</style>
